@@ -195,73 +195,6 @@ body {
     margin-left: 8px;
 }
 
-.hero-art {
-    position: absolute;
-    z-index: 1;
-    right: 1vw;
-    bottom: -39px;
-    width: min(62vw, 940px);
-    height: 650px;
-}
-
-.bat {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    filter: contrast(1.03) saturate(.8);
-    mix-blend-mode: screen;
-}
-
-/*.moon {
-    position: absolute;
-    width: 410px;
-    height: 410px;
-    right: 18%;
-    top: 82px;
-    background: #d5ea82;
-    border-radius: 50%;
-    z-index: -1;
-    opacity: .82;
-    filter: blur(1px);
-}*/
-
-.art-label {
-    position: absolute;
-    right: 5%;
-    top: 0;
-    font: 11px 'DM Mono', monospace;
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    color: #c5dc71;
-}
-
-.bat-name {
-    position: absolute;
-    right: 1%;
-    bottom: 115px;
-    font: 700 clamp(50px, 7vw, 112px) / .8 'Playfair Display', serif;
-    letter-spacing: -.08em;
-    margin: 0;
-    color: #f6e7c9;
-}
-
-.bat-name span {
-    font-style: italic;
-    color: #c5dc71;
-}
-
-.species {
-    position: absolute;
-    right: 2%;
-    bottom: 42px;
-    color: #f8f2e4;
-    text-align: right;
-    font-size: 12px;
-    line-height: 1.5;
-}
-
 .hero-bottom {
     position: absolute;
     left: 9vw;
@@ -323,7 +256,7 @@ body {
 
 .marquee div {
     display: inline-block;
-    animation: move 30s linear infinite;
+    animation: move 10s linear infinite;
 }
 
 .marquee b {
@@ -416,6 +349,62 @@ body {
     margin: 0;
     max-width: 170px;
     line-height: 1.4;
+}
+
+/* ================================
+   ABOUT WACC
+================================ */
+
+.wacc-about {
+    background: #f2ead9;
+    color: #11140f;
+}
+
+.wacc-grid {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 10vw;
+    align-items: center;
+}
+
+.wacc-logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 420px;
+}
+
+.wacc-logo-wrap img {
+    width: min(360px, 80%);
+    height: auto;
+    object-fit: contain;
+}
+
+.wacc-content {
+    max-width: 650px;
+}
+
+.wacc-content h2 {
+    margin: 0 0 35px;
+    font-size: clamp(55px, 7vw, 100px);
+}
+
+.wacc-content h2 em {
+    color: var(--moss);
+}
+
+.wacc-lead {
+    font: 600 25px / 1.35 'Playfair Display', serif;
+    margin: 0 0 25px;
+    max-width: 600px;
+}
+
+.wacc-content p:not(.wacc-lead) {
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 570px;
+    color: #435537;
+    margin: 0 0 18px;
 }
 
 .wild-week {
@@ -656,7 +645,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: end;
-    font-size: 11px;
+    font-size: 15px;
     line-height: 1.6;
 }
 
@@ -667,8 +656,8 @@ footer > div {
 }
 
 footer img {
-    width: 55px;
-    height: 55px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
 }
 
@@ -679,6 +668,27 @@ footer p {
 footer a {
     color: #c5dc71;
     text-decoration: none;
+}
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.footer-links a {
+    color: #c5dc71;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
 }
 
 @media (max-width: 800px) {
@@ -708,37 +718,6 @@ footer a {
     .intro {
         font-size: 16px;
         max-width: 300px;
-    }
-
-    .hero-art {
-        width: 128vw;
-        right: -38vw;
-        bottom: 28px;
-        height: 440px;
-        opacity: .78;
-    }
-
-    .moon {
-        width: 260px;
-        height: 260px;
-        right: 24%;
-        top: 85px;
-    }
-
-    .bat-name {
-        bottom: 70px;
-        right: 10%;
-        font-size: 62px;
-    }
-
-    .species {
-        bottom: 13px;
-        right: 11%;
-        font-size: 10px;
-    }
-
-    .art-label {
-        display: none;
     }
 
     .hero-bottom {
@@ -875,6 +854,30 @@ footer a {
     footer > div {
         align-items: center;
     }
+        
+    .wacc-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    }
+
+    .wacc-logo-wrap {
+        min-height: auto;
+        justify-content: flex-start;
+    }
+
+    .wacc-logo-wrap img {
+        width: 220px;
+    }
+
+    .wacc-content h2 {
+        font-size: clamp(52px, 14vw, 80px);
+        margin-bottom: 25px;
+    }
+
+    .wacc-lead {
+        font-size: 22px;
+    }
+
 }
 
 /* ================================
@@ -1056,4 +1059,47 @@ footer a {
         font-size: 14px;
     }
 
+}
+
+.wacc-instagram {
+    display: inline-block;
+    margin-top: 18px;
+    color: var(--ink);
+    font: 500 12px 'DM Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    text-decoration: none;
+    border-bottom: 1px solid var(--moss);
+    padding-bottom: 7px;
+}
+
+.wacc-instagram span {
+    color: var(--moss);
+    margin-left: 8px;
+}
+
+.wacc-instagram:hover {
+    color: var(--moss);
+}
+/* ================================
+   HERO WILD 16.0 LOGO
+================================ */
+
+.hero-logo {
+    position: absolute;
+    z-index: 1;
+    right: 8vw;
+    top: 50%;
+    width: min(42vw, 650px);
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
 }
